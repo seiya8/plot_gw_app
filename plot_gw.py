@@ -34,6 +34,7 @@ def plot_gw(sample_rate, start_time, f_lower, mass1, mass2, distance, dec, ra, i
     plt.tight_layout()
     return fig, ax
 
+
 st.set_page_config(layout="wide")
 # plt.style.use('ggplot')
 st.title("GW Plotting App")
