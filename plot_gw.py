@@ -36,8 +36,16 @@ def plot_gw(sample_rate, start_time, f_lower, mass1, mass2, distance, dec, ra, i
 
 
 st.set_page_config(layout="wide")
+hide_menu = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_menu, unsafe_allow_html=True)
 # plt.style.use('ggplot')
 st.title("GW Plotting App")
+st.markdown("[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![made-with-streamlit](https://img.shields.io/badge/Made%20with-Streamlit-1f425f.svg)](https://streamlit.io/) [![made-with-pycbc](https://img.shields.io/badge/Made%20with-Pycbc-1f425f.svg)](https://pycbc.org/) [![made-with-matplotlib](https://img.shields.io/badge/Made%20with-Matplotlib-1f425f.svg)](https://matplotlib.org/)")
 st.markdown("Waveform model: `IMRPhenomXPHM`")
 col1, col2, col3, col4, col5, col6 = st.columns(6)
 with col1:
