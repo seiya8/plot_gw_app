@@ -49,7 +49,7 @@ st.markdown(hide_menu, unsafe_allow_html=True)
 # plt.style.use('ggplot')
 st.title("GW Plotting App")
 st.markdown("[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![made-with-streamlit](https://img.shields.io/badge/Made%20with-Streamlit-1f425f.svg)](https://streamlit.io/) [![made-with-pycbc](https://img.shields.io/badge/Made%20with-Pycbc-1f425f.svg)](https://pycbc.org/) [![made-with-matplotlib](https://img.shields.io/badge/Made%20with-Matplotlib-1f425f.svg)](https://matplotlib.org/)")
-st.markdown("Waveform model: `IMRPhenomXPHM`")
+st.markdown("Waveform model: [`IMRPhenomXPHM`](https://doi.org/10.48550/arXiv.2004.06503)")
 col1, col2, col3, col4, col5, col6 = st.columns(6)
 with col1:
     st.markdown("Detectors:")
