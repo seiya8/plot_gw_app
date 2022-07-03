@@ -15,6 +15,8 @@ def plot_gw(sample_rate, start_time, f_lower, mass1, mass2, distance, dec, ra, i
     hc.prepend_zeros(3*2048)
     plotDetector = (h1,l1,v1,k1)
     waves = {}
+    colors = ('#1f77b4', '#ff7f0e', '#2ca02c', '#d62728')
+    
     for i, det in enumerate(('H1', 'L1', 'V1', 'K1')):
         if plotDetector[i]:
             wave = Detector(det).project_wave(hp, hc, ra, dec, pol)
@@ -22,8 +24,9 @@ def plot_gw(sample_rate, start_time, f_lower, mass1, mass2, distance, dec, ra, i
 
     fig = plt.figure(figsize=(20,6))
     ax = plt.axes()
-    for det in waves:
-        plt.plot(waves[det].sample_times, waves[det], label=det)
+    for i, det in enumerate(('H1', 'L1', 'V1', 'K1')):
+        if plotDetector[i]:
+            plt.plot(waves[det].sample_times, waves[det], color=colors[i], label=det)
     plt.title(f"mass1={mass1}M$_\odot$, mass2={mass2}M$_\odot$, spin1a={spin1a}, spin1az={spin1az}, spin1po={spin1po}, spin2a={spin2a}, spin2az={spin2az}, spin2po={spin2po}, \n distance={distance}Mpc, coa_phase={coa_phase}, inclination={inclination}, dec={dec}, ra={ra}, pol_angle={pol}, f_lower={f_lower}Hz")
     plt.xlabel("Time from merger (s)", fontsize=18)
     plt.ylabel("Strain", fontsize=18)
